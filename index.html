@@ -3,204 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Explore professional rooftop solar solutions, solar packages, EMI estimates and free solar consultations.">
-  <title>Sunora Solar | Clean Energy, Made Simple</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Risa Energy provides solar solutions for homes and businesses in Prayagraj and nearby areas.">
+  <title>Risa Energy | Powering a Brighter Tomorrow</title>
+  <script>
+    const savedTheme = localStorage.getItem("risa-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme = savedTheme === "light" || savedTheme === "dark"
+      ? savedTheme
+      : prefersDark ? "dark" : "light";
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/emi-calculator.css">
 </head>
 <body>
-  <div class="announcement">
-    <div class="container announcement-inner">
-      <span><span class="status-dot"></span> Smart solar solutions for homes and businesses</span>
-      <span id="serviceAreaTop">Serving Varanasi, Prayagraj & nearby areas</span>
-    </div>
-  </div>
-
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="Risa Energy home">
-        <img class="brand-logo" src="LOGO.jpeg" alt="Risa Energy Pvt Ltd.">
+        <img class="brand-logo" src="assets/LOGO.jpeg" alt="Risa Energy Pvt. Ltd.">
       </a>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#home-services">Services</a>
-        <a href="#packages">Packages</a>
-        <a href="#calculator">EMI Calculator</a>
-        <a href="#about">Why Solar</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#solutions">Solutions</a><a href="#emi-calculator">EMI Calculator</a><a href="#how-it-works">How It Works</a>
+        <a href="#savings">Savings</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a class="btn btn-small" href="#contact">Get Free Solar Quote</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">☾</span></button>
       </nav>
-      <div class="header-actions">
-        <a class="phone-link" id="headerPhone" href="tel:+919876543210"><span class="phone-icon">☎</span><span><small>Talk to an expert</small><b>+91 98765 43210</b></span></a>
-        <a class="btn btn-primary btn-small" href="#contact">Get Free Quote <span>↗</span></a>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode"><span class="theme-glyph" id="themeGlyph">☾</span><span id="themeLabel">Night</span></button>
-      </div>
     </div>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <div class="eyebrow"><span>✦</span> A brighter way to power your life</div>
-          <h1>Good for your home.<br><span>Better for tomorrow.</span></h1>
-          <p class="hero-description">Make the move to clean, reliable solar energy. Find the right rooftop system for your needs with clear pricing, expert guidance and flexible financing estimates.</p>
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="#contact">Get a Free Consultation <span>↗</span></a>
-            <a class="btn btn-outline" href="#calculator"><span class="play-icon">▸</span> Calculate Solar EMI</a>
-          </div>
-          <div class="hero-benefits">
-            <span><i>✓</i> Personalised guidance</span>
-            <span><i>✓</i> Quality-first solutions</span>
-            <span><i>✓</i> Home & business</span>
-          </div>
-          <div class="mini-proof">
-            <div class="proof-icons"><span>☀</span><span>⌂</span><span>↗</span></div>
-            <div><b>Start with a smarter energy plan</b><small>Simple advice, clear next steps.</small></div>
-          </div>
-        </div>
-        <div class="hero-art">
-          <div class="image-frame"><img id="heroImage" src="" alt="Solar panels installed on a modern rooftop"></div>
-          <div class="image-wash"></div>
-          <div class="floating-card savings-card"><span class="floating-icon">↘</span><div><small>Energy bill potential</small><b>Save more with solar</b></div></div>
-          <div class="floating-card clean-card"><span class="sun-badge">☼</span><div><b>Clean energy</b><small>Designed around you</small></div><span class="tiny-check">✓</span></div>
-          <div class="sun-decoration">✳</div>
-        </div>
+      <div class="hero-slides" id="heroSlides" aria-label="Solar project photo slider">
+        <!-- Slider photos are loaded from js/config.js. Add your own files in assets/images/slider/. -->
       </div>
-      <div class="hero-bottom container">
-        <span>YOUR SOLAR JOURNEY, SIMPLIFIED</span>
-        <div class="hero-bottom-items"><b>01 <small>Understand</small></b><i></i><b>02 <small>Compare</small></b><i></i><b>03 <small>Go Solar</small></b></div>
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <div class="hero-main">
+          <p class="eyebrow">CLEAN ENERGY • SMART SAVINGS</p>
+          <h1>Risa Energy Pvt. Ltd.</h1>
+          <p class="hero-copy">Clean, affordable, and reliable solar solutions for homes and businesses in Prayagraj and nearby areas.</p>
+          <div class="hero-actions"><a class="btn" href="#contact">Get Free Solar Quote</a><a class="btn btn-light" href="#savings">Calculate Savings</a></div>
+          <div class="slider-controls"><button id="prevSlide" aria-label="Previous photo">‹</button><div id="slideDots" class="slide-dots"></div><button id="nextSlide" aria-label="Next photo">›</button></div>
+        </div>
+        <img class="hero-feature-image" src="assets/heroDiv.jpeg" alt="Solar technicians installing rooftop panels">
+      </div>
+      <div class="hero-bottom"><span>☀ Solar made simple</span><span>Reliable installation & support</span></div>
+    </section>
+
+    <section class="section benefits" id="about">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">WHY CHOOSE US</p><h2>Switch to Solar with <span data-brand>Risa Energy</span></h2><p>Make a smart investment in a cleaner, more energy-independent future.</p></div>
+        <div class="benefit-grid">
+          <article class="benefit-card"><div class="benefit-icon">↘</div><h3>Lower Electricity Bills</h3><p>Reduce monthly electricity costs and enjoy long-term savings.</p></article>
+          <article class="benefit-card"><div class="benefit-icon">♻</div><h3>Clean Renewable Energy</h3><p>Use the power of the sun for a more sustainable tomorrow.</p></article>
+          <article class="benefit-card"><div class="benefit-icon">₹</div><h3>Subsidy Guidance</h3><p>Get guidance on applicable government schemes and incentives.</p></article>
+          <article class="benefit-card"><div class="benefit-icon">☀</div><h3>Greater Independence</h3><p>Explore suitable solar and backup options for your energy needs.</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-grid">
-        <div class="trust-item"><span class="trust-icon">⌂</span><div><b>Residential Solar</b><small>Made for your home</small></div></div>
-        <div class="trust-item"><span class="trust-icon">▦</span><div><b>Commercial Solar</b><small>For growing businesses</small></div></div>
-        <div class="trust-item"><span class="trust-icon">₹</span><div><b>EMI Planning</b><small>Understand costs upfront</small></div></div>
-        <div class="trust-item"><span class="trust-icon">♧</span><div><b>Cleaner Energy</b><small>A more sustainable choice</small></div></div>
-      </div>
-    </section>
-
-    <section class="section" id="home-services">
+    <section class="section emi-section" id="emi-calculator">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow"><span>✦</span> At-home solar services</div>
-          <h2>Solar support, right at <span>your doorstep.</span></h2>
-          <p>From roof checks to installation planning, start with the service you need.</p>
+          <p class="eyebrow">PLAN YOUR INVESTMENT</p>
+          <h2>Solar Loan EMI Calculator</h2>
+          <p>Estimate your monthly loan payment and see how solar savings may affect your monthly budget.</p>
         </div>
-        <div class="service-grid">
-          <article class="service-card"><div class="service-illustration illustration-home"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Solar panels on a home rooftop" loading="lazy"></div><div class="service-content"><span class="card-kicker">VISIT YOUR PROPERTY</span><h3>Home Roof Assessment</h3><p>Discuss roof space, shade, orientation and the best place to install panels.</p><a class="text-link" href="#contact">Book a home visit <span>↗</span></a></div></article>
-          <article class="service-card"><div class="service-illustration illustration-business"><img src="https://images.unsplash.com/photo-1668097613572-40b7c11c8727?auto=format&amp;fit=crop&amp;w=900&amp;q=80&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" alt="Solar installer fastening a rooftop panel" loading="lazy"></div><div class="service-content"><span class="card-kicker">FROM PLAN TO INSTALL</span><h3>Solar Installation</h3><p>Ask about equipment options, installation steps, safety and commissioning.</p><a class="text-link" href="#contact">Request installation <span>↗</span></a></div></article>
-          <article class="service-card"><div class="service-illustration illustration-support"><img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Completed solar panel array viewed from above" loading="lazy"></div><div class="service-content"><span class="card-kicker">KEEP IT WORKING</span><h3>Maintenance & Support</h3><p>Ask about panel cleaning, system checks, monitoring and after-installation support.</p><a class="text-link" href="#contact">Request service <span>↗</span></a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow"><span>✦</span> What we offer</div>
-          <h2>Solar solutions for <span>everyday life.</span></h2>
-          <p>From your first question to a confident decision, get the information you need to explore solar.</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card"><div class="service-illustration illustration-home"><img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&amp;fit=crop&amp;w=900&amp;q=80&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" alt="Installer lifting a solar panel into place on a home roof" loading="lazy"></div><div class="service-content"><span class="card-kicker">FOR YOUR HOME</span><h3>Residential Rooftop Solar</h3><p>Explore a rooftop system that suits your household's energy usage, roof space and budget.</p><a class="text-link" href="#contact">Explore home solar <span>↗</span></a></div></article>
-          <article class="service-card"><div class="service-illustration illustration-business"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Solar panel array for clean commercial energy" loading="lazy"></div><div class="service-content"><span class="card-kicker">FOR YOUR BUSINESS</span><h3>Commercial Solar</h3><p>Consider solar options for shops, offices and businesses that want to manage energy costs.</p><a class="text-link" href="#contact">Plan a business system <span>↗</span></a></div></article>
-          <article class="service-card"><div class="service-illustration illustration-support"><img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&amp;fit=crop&amp;w=900&amp;q=80&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D" alt="Completed solar farm with rows of installed panels" loading="lazy"></div><div class="service-content"><span class="card-kicker">SUPPORT THAT HELPS</span><h3>Installation Guidance</h3><p>Get help understanding system components, site requirements and the next steps.</p><a class="text-link" href="#contact">Talk to our team <span>↗</span></a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section packages-section" id="packages">
-      <div class="container">
-        <div class="section-heading section-heading-row">
-          <div><div class="eyebrow"><span>✦</span> Solar packages</div><h2>A simple place to <span>start.</span></h2><p>Compare sample system sizes and request a tailored quote.</p></div>
-          <div class="heading-note"><span>ⓘ</span> Displayed prices are dummy estimates for demo purposes.</div>
-        </div>
-        <div class="package-grid" id="packageCards"></div>
-      </div>
-    </section>
-
-    <section class="section calculator-section" id="calculator">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow"><span>✦</span> Plan with confidence</div>
-          <h2>Your solar <span>EMI calculator.</span></h2>
-          <p>Adjust the numbers to see an indicative monthly payment and possible electricity-bill savings.</p>
-        </div>
-        <div class="calculator-layout">
-          <div class="calculator-panel">
-            <div class="panel-title"><div class="panel-icon">⌁</div><div><h3>Build your estimate</h3><p>Use the sample values or enter your own.</p></div></div>
-            <div class="form-grid">
-              <div class="field"><label for="systemKw">Solar system size</label><select id="systemKw"><option value="1">1 kW</option><option value="2">2 kW</option><option value="3" selected>3 kW</option><option value="4">4 kW</option><option value="5">5 kW</option><option value="6">6 kW</option><option value="8">8 kW</option><option value="10">10 kW</option></select></div>
-              <div class="field"><label for="systemCost">Estimated system cost (₹)</label><input id="systemCost" type="number" min="10000" step="5000" value="165000"></div>
-              <div class="field"><label for="downPayment">Down payment (₹)</label><input id="downPayment" type="number" min="0" step="5000" value="30000"></div>
-              <div class="field"><label for="interestRate">Annual interest rate (%)</label><input id="interestRate" type="number" min="0" max="36" step=".25" value="10.5"></div>
-              <div class="field"><label for="tenure">Loan tenure</label><select id="tenure"><option value="1">1 year</option><option value="2">2 years</option><option value="3">3 years</option><option value="4">4 years</option><option value="5" selected>5 years</option><option value="7">7 years</option><option value="10">10 years</option></select></div>
-              <div class="field"><label for="monthlyBill">Monthly electricity bill (₹)</label><input id="monthlyBill" type="number" min="0" step="100" value="2500"></div>
+        <div class="emi-layout">
+          <form class="emi-card emi-inputs" id="emiForm">
+            <h3>Loan details</h3>
+            <p class="emi-card-intro">Enter your estimated system and loan amounts.</p>
+            <div class="emi-fields">
+              <div class="emi-field">
+                <label for="systemCost">Total solar system cost (₹)</label>
+                <input id="systemCost" name="systemCost" type="number" min="1" step="1" value="600000" required inputmode="decimal">
+              </div>
+              <div class="emi-field">
+                <label for="governmentSubsidy">Government subsidy (₹)</label>
+                <input id="governmentSubsidy" name="governmentSubsidy" type="number" min="0" step="1" value="108000" required inputmode="decimal" aria-describedby="subsidyHelp">
+                <small id="subsidyHelp">Editable estimate; actual eligibility and amount depend on current scheme rules.</small>
+              </div>
+              <div class="emi-field">
+                <label for="downPayment">Down payment (₹)</label>
+                <input id="downPayment" name="downPayment" type="number" min="0" step="1" value="50000" required inputmode="decimal">
+              </div>
+              <div class="emi-field">
+                <label for="interestRate">Loan interest rate (% per annum)</label>
+                <input id="interestRate" name="interestRate" type="number" min="0" max="100" step="0.01" value="9.5" required inputmode="decimal" aria-describedby="rateHelp">
+                <small id="rateHelp">Enter a rate from 0% to 100%.</small>
+              </div>
+              <div class="emi-field">
+                <label for="loanTenure">Loan tenure</label>
+                <select id="loanTenure" name="loanTenure" required>
+                  <option value="6">6 months</option>
+                  <option value="12">12 months (1 year)</option>
+                  <option value="18">18 months</option>
+                  <option value="24">24 months (2 years)</option>
+                  <option value="36">36 months (3 years)</option>
+                  <option value="48">48 months (4 years)</option>
+                  <option value="60" selected>60 months (5 years)</option>
+                  <option value="84">84 months (7 years)</option>
+                  <option value="120">120 months (10 years)</option>
+                  <option value="180">180 months (15 years)</option>
+                  <option value="240">240 months (20 years)</option>
+                  <option value="300">300 months (25 years)</option>
+                  <option value="360">360 months (30 years)</option>
+                </select>
+              </div>
+              <div class="emi-field">
+                <label for="monthlySavings">Estimated monthly electricity bill savings (₹) <span class="emi-optional">Optional</span></label>
+                <input id="monthlySavings" name="monthlySavings" type="number" min="0" step="1" value="5000" inputmode="decimal" aria-describedby="savingsHelp">
+                <small id="savingsHelp">Enter 0 if you do not want to include estimated savings.</small>
+              </div>
             </div>
-            <button class="btn btn-primary update-button" id="calculateBtn" type="button">Update my estimate <span>↻</span></button>
-          </div>
-          <aside class="estimate-panel" aria-live="polite">
-            <div class="estimate-top"><span class="estimate-label">YOUR INDICATIVE MONTHLY EMI</span><span class="estimate-sun">☼</span></div>
-            <div class="emi-value" id="emiValue">₹2,900</div>
-            <div class="estimate-caption">Estimated payment per month</div>
-            <div class="estimate-divider"></div>
-            <div class="estimate-row"><span>Loan amount</span><b id="loanValue">₹1,35,000</b></div>
-            <div class="estimate-row"><span>Total estimated interest</span><b id="interestValue">₹0</b></div>
-            <div class="estimate-row"><span>Potential monthly bill savings*</span><b id="savingsValue">₹0</b></div>
-            <div class="estimate-row"><span>Illustrative payback period*</span><b id="paybackValue">—</b></div>
-            <button class="btn btn-white" id="emiEnquiry" type="button">Discuss this estimate on WhatsApp <span>↗</span></button>
-            <p class="estimate-disclaimer">*Illustrative only, not a guarantee. Actual savings depend on sunlight, roof conditions, usage, tariffs and system performance. Loan approval and terms are determined by the lender. Subsidies are not included.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section why-section" id="about">
-      <div class="container why-layout">
-        <div class="why-image"><img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1000&q=85" alt="Solar panels under a clear sky" loading="lazy"><div class="image-caption"><span>☼</span><div><b>A brighter energy choice</b><small>Plan today for tomorrow</small></div></div></div>
-        <div class="why-copy"><div class="eyebrow"><span>✦</span> Why consider solar?</div><h2>Better energy decisions begin with <span>clear information.</span></h2><p>We make it easier to compare options, understand indicative costs and know which questions to ask before you invest.</p><div class="why-point"><span>01</span><div><b>Designed around your usage</b><small>System sizing should consider your electricity consumption and available roof space.</small></div></div><div class="why-point"><span>02</span><div><b>Understand the investment</b><small>Explore sample prices, financing and payback estimates in one place.</small></div></div><div class="why-point"><span>03</span><div><b>Guidance at every step</b><small>Ask about components, site assessment, installation and applicable schemes.</small></div></div><a class="btn btn-primary" href="#contact">Let's discuss your project <span>↗</span></a></div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="container contact-layout">
-        <div class="contact-copy"><div class="eyebrow eyebrow-light"><span>✦</span> Your solar journey starts here</div><h2>Let's find the right solar solution for you.</h2><p>Share a few details. Your enquiry will open in WhatsApp, ready for you to review and send.</p><div class="contact-details"><a id="contactPhone" href="tel:+919876543210"><span>☎</span><div><small>Call our team</small><b>+91 98765 43210</b></div></a><a id="contactEmail" href="mailto:hello@sunorasolar.example"><span>✉</span><div><small>Email us</small><b>hello@sunorasolar.example</b></div></a><div><span>⌖</span><div><small>Service area</small><b id="serviceArea">Varanasi, Prayagraj & nearby areas</b></div></div><div class="contact-address"><span>⌖</span><div><small>Our Office Address</small><b id="businessAddress"></b></div></div></div></div>
-        <div class="enquiry-card"><div class="enquiry-heading"><div><h3>Request a free callback</h3><p>Fields marked * are required.</p></div><span class="form-sun">☼</span></div>
-          <form id="enquiryForm">
-            <div class="field"><label for="customerName">Your full name *</label><input id="customerName" name="name" required maxlength="80" placeholder="e.g. Rahul Kumar"></div>
-            <div class="form-grid">
-              <div class="field"><label for="customerPhone">Mobile number *</label><input id="customerPhone" name="phone" required inputmode="tel" pattern="[0-9 +()-]{10,18}" maxlength="18" placeholder="Your phone number"></div>
-              <div class="field"><label for="customerCity">City / area *</label><input id="customerCity" name="city" required maxlength="100" placeholder="Your location"></div>
+            <p class="emi-error" id="emiError" role="alert" aria-live="polite"></p>
+            <div class="emi-actions">
+              <button class="emi-button" type="submit">Calculate EMI</button>
+              <button class="emi-button emi-button-secondary" id="resetEmi" type="reset">Reset</button>
             </div>
-            <div class="form-grid">
-              <div class="field"><label for="customerBill">Monthly electricity bill</label><select id="customerBill" name="bill"><option>Below ₹1,000</option><option>₹1,000–₹2,000</option><option selected>₹2,000–₹4,000</option><option>₹4,000–₹7,000</option><option>Above ₹7,000</option></select></div>
-              <div class="field"><label for="customerSystem">System size</label><select id="customerSystem" name="system"><option>Not sure yet</option><option>1 kW</option><option>2 kW</option><option selected>3 kW</option><option>5 kW</option><option>Above 5 kW</option></select></div>
-            </div>
-            <div class="field"><label for="customerMessage">Your message (optional)</label><textarea id="customerMessage" name="message" rows="3" maxlength="300" placeholder="Tell us a little about your requirements"></textarea></div>
-            <button class="btn btn-primary submit-button" type="submit">Send enquiry on WhatsApp <span>↗</span></button>
           </form>
+
+          <section class="emi-card emi-results" aria-labelledby="emiResultsHeading">
+            <div class="emi-results-heading">
+              <div><p class="emi-result-eyebrow">YOUR ESTIMATE</p><h3 id="emiResultsHeading">Monthly EMI</h3></div>
+              <span class="emi-badge">Indicative only</span>
+            </div>
+            <p class="emi-monthly"><span id="emiMonthly">₹—</span><span> / month</span></p>
+            <p class="emi-result-note" id="emiAnnouncement" role="status" aria-live="polite">Estimates update when you change an input.</p>
+            <div class="emi-breakdown" aria-label="Loan repayment breakdown">
+              <div class="emi-breakdown-bar" role="img" id="emiBreakdownBar" aria-label="Principal and interest breakdown">
+                <span class="emi-principal-segment" id="emiPrincipalSegment"></span>
+                <span class="emi-interest-segment" id="emiInterestSegment"></span>
+              </div>
+              <div class="emi-legend">
+                <span><i class="emi-legend-principal"></i>Loan principal <strong id="emiPrincipalLegend">₹—</strong></span>
+                <span><i class="emi-legend-interest"></i>Total interest <strong id="emiInterestLegend">₹—</strong></span>
+              </div>
+            </div>
+            <dl class="emi-summary">
+              <div><dt>Total solar system cost</dt><dd id="emiCost">₹—</dd></div>
+              <div><dt>Government subsidy</dt><dd id="emiSubsidy">₹—</dd></div>
+              <div><dt>Down payment</dt><dd id="emiDownPayment">₹—</dd></div>
+              <div class="emi-summary-highlight"><dt>Net loan amount</dt><dd id="emiLoan">₹—</dd></div>
+              <div><dt>Total interest payable</dt><dd id="emiInterest">₹—</dd></div>
+              <div class="emi-summary-total"><dt>Total loan repayment</dt><dd id="emiRepayment">₹—</dd></div>
+              <div><dt>Estimated monthly bill savings</dt><dd id="emiSavings">₹—</dd></div>
+              <div class="emi-summary-benefit"><dt>Estimated net monthly benefit</dt><dd id="emiNetBenefit">₹—</dd></div>
+            </dl>
+            <p class="emi-disclaimer">This calculator provides estimates only, not an official bank quotation. Actual loan terms, approval, subsidy eligibility and benefits are determined by the lender and applicable government rules.</p>
+          </section>
         </div>
       </div>
     </section>
 
-    <section class="section faq-section"><div class="container"><div class="section-heading"><div class="eyebrow"><span>✦</span> Helpful answers</div><h2>Frequently asked <span>questions.</span></h2></div><div class="faq-grid"><article class="faq-item"><h3>How do I choose the right system size?</h3><p>Your electricity usage, daytime consumption, roof space and shading all matter. A site assessment helps confirm the right system.</p></article><article class="faq-item"><h3>Is the EMI calculator exact?</h3><p>No. It is a planning estimate. The lender's interest rate, fees and eligibility rules can change your final EMI.</p></article><article class="faq-item"><h3>Are government subsidies included?</h3><p>No. Sample prices and calculations exclude subsidies. Check current official scheme rules and eligibility before making a decision.</p></article><article class="faq-item"><h3>How do I get a final quotation?</h3><p>Send an enquiry so the team can discuss your property, equipment preferences and installation requirements.</p></article></div></div></section>
+    <section class="section process" id="how-it-works">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">A SIMPLE PROCESS</p><h2>How Solar Works</h2><p>From the first conversation to switching on your solar system.</p></div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01</span><div><h3>Free Consultation</h3><p>Tell us about your property, usage, and energy goals.</p></div></article>
+          <article class="step"><span class="step-number">02</span><div><h3>Custom System Design</h3><p>We help plan a solar solution suited to your requirements.</p></div></article>
+          <article class="step"><span class="step-number">03</span><div><h3>Professional Installation</h3><p>Get installation support and guidance through the process.</p></div></article>
+          <article class="step"><span class="step-number">04</span><div><h3>Start Saving</h3><p>Generate solar power and monitor your energy use.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-band" id="solutions">
+      <div class="container">
+        <div class="section-heading section-heading-light"><p class="eyebrow">OUR SOLUTIONS</p><h2>Solar for Every Need</h2><p>Thoughtful solar solutions for residential and commercial properties.</p></div>
+        <div class="solution-grid">
+          <article class="solution-card"><img src="assets/solar2.jpg" alt="Residential rooftop solar panels" onerror="this.style.display='none'"><div class="solution-body"><span class="pill">FOR YOUR HOME</span><h3>Residential Solar</h3><p>Explore rooftop solar for your home and reduce dependence on grid electricity.</p><a class="text-link" href="#contact">Ask about home solar <span>→</span></a></div></article>
+          <article class="solution-card"><img src="assets/solar3.jpg" alt="Commercial solar panel installation" onerror="this.style.display='none'"><div class="solution-body"><span class="pill">FOR YOUR BUSINESS</span><h3>Commercial Solar</h3><p>Solar options designed around business energy usage and available roof space.</p><a class="text-link" href="#contact">Explore business solar <span>→</span></a></div></article>
+          <article class="solution-card"><img src="assets/solar1.jpg" alt="Solar technician checking panels" onerror="this.style.display='none'"><div class="solution-body"><span class="pill">ONGOING SUPPORT</span><h3>Solar Support</h3><p>Get advice on system care, performance, and maintenance requirements.</p><a class="text-link" href="#contact">Talk to our team <span>→</span></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section savings" id="savings">
+      <div class="container savings-layout">
+        <div><p class="eyebrow">YOUR SOLAR JOURNEY</p><h2>Let’s estimate your solar needs.</h2><p class="muted">Share a few details and our team can help you understand your options. This form provides an enquiry only, not a guaranteed savings calculation.</p><div class="savings-points"><span>✓ Personalised guidance</span><span>✓ Local support in Prayagraj</span><span>✓ No-obligation enquiry</span></div></div>
+        <form id="savingsForm" class="quote-form">
+          <h3>Request a Solar Estimate</h3>
+          <div class="form-fields">
+            <div class="form-field"><label for="contactName">Name</label><input id="contactName" name="contactName" autocomplete="name" required></div>
+            <div class="form-field"><label for="contactAddress">Address</label><textarea id="contactAddress" name="contactAddress" rows="2" autocomplete="street-address" required></textarea></div>
+            <div class="form-field"><label for="landmark">Landmark</label><input id="landmark" name="landmark" required></div>
+            <div class="form-field"><label for="contactMobile">Mobile number</label><input id="contactMobile" name="contactMobile" type="tel" inputmode="numeric" autocomplete="tel-national" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" title="Enter a 10-digit mobile number" required></div>
+            <div class="form-field"><label for="contactEmail">Email</label><input id="contactEmail" name="contactEmail" type="email" autocomplete="email" required></div>
+            <div class="form-field"><label for="monthlyBill">Average monthly electricity bill (₹)</label><select id="monthlyBill" name="monthlyBill" required><option value="">Select your monthly bill</option><option>Below ₹1,500</option><option>₹1,500–₹3,000</option><option>₹3,000–₹5,000</option><option>₹5,000–₹10,000</option><option>Above ₹10,000</option></select></div>
+            <div class="form-field"><label for="propertyType">Property type</label><select id="propertyType" name="propertyType" required><option value="">Select property type</option><option>Residential home</option><option>Commercial property</option><option>Industrial property</option><option>Other</option></select></div>
+            <div class="form-field"><label for="postalCode">PIN code</label><input id="postalCode" name="postalCode" inputmode="numeric" maxlength="6" placeholder="e.g. 211008" pattern="[0-9]{6}" required></div>
+          </div>
+          <button class="btn btn-full" type="submit">Continue on WhatsApp <span>→</span></button>
+          <p class="form-note">Your details will be used to prepare a solar enquiry message.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section gallery-section">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">OUR WORK</p><h2>Solar in Action</h2><p>Explore solar panel installations and on-site work.</p></div>
+        <div class="gallery-grid" id="projectGallery"></div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact">
+      <div class="container contact-layout"><div><p class="eyebrow">LET'S TALK SOLAR</p><h2>Ready for a brighter tomorrow?</h2><p>Get in touch for a friendly, no-obligation conversation about solar for your property.</p></div><div class="contact-actions"><a class="btn" id="callButton" href="tel:+919450509659">Call Us</a><a class="btn btn-light" id="whatsappButton" href="#" target="_blank" rel="noopener">WhatsApp Us</a></div></div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><div class="footer-about"><a class="brand brand-footer" href="#home" aria-label="Risa Energy home"><img class="brand-logo" src="LOGO.jpeg" alt="Risa Energy Pvt Ltd."></a><p>Thoughtful solar solutions for homes and businesses. Make your next energy decision with confidence.</p></div><div><h4>Explore</h4><a href="#services">Our solutions</a><a href="#packages">Solar packages</a><a href="#calculator">EMI calculator</a><a href="#contact">Get a quote</a></div><div><h4>Contact</h4><a id="footerPhone" href="tel:+919876543210">+91 98765 43210</a><a id="footerEmail" href="mailto:hello@sunorasolar.example">hello@sunorasolar.example</a><span id="footerArea">Varanasi, Prayagraj & nearby areas</span><span id="footerAddress"></span></div><div class="footer-cta"><span class="footer-sun">☼</span><b>Ready to explore solar?</b><p>Let's talk about your energy goals.</p><a href="#contact">Start an enquiry ↗</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> <span id="copyrightBrand">Sunora Solar</span>. All rights reserved.</span><span>Developed by PINWEB PVT LTD</span></div></footer>
-
-  <div class="floating-actions" aria-label="Quick actions">
-    <a class="floating-action floating-action-top" href="#home" aria-label="Back to top" title="Back to top">⬆️</a>
-    <a class="floating-action floating-action-call" id="floatingCall" href="tel:+919876543210" aria-label="Call our team" title="Call our team">📞</a>
-    <a class="floating-action floating-action-whatsapp" id="floatingWhatsApp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">💬</a>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#home" aria-label="Risa Energy home"><img class="brand-logo" src="assets/LOGO.jpeg" alt="Risa Energy Pvt. Ltd."></a>
+      <p data-tagline>Powering a brighter tomorrow</p>
+      <address class="footer-address"><span class="footer-label">Office Address</span><span data-address>10/C 4A Madhavpur Patti, Naini, Prayagraj - 211008, U.P.</span></address>
+      <div class="footer-links"><a href="#solutions">Solutions</a><a href="#how-it-works">How It Works</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> <span data-brand>Risa Energy</span>. All rights reserved.</span>
+      <span id="footerArea">Prayagraj & nearby areas</span>
+      <span class="footer-credit">Developed by Pinweb Pvt Ltd</span>
+    </div>
+  </footer>
+  <div class="floating-actions" aria-label="Quick contact and page navigation">
+    <a class="floating-action floating-top" href="#home" aria-label="Back to top" title="Back to top">↑</a>
+    <a class="floating-action floating-call" id="floatingCallButton" href="tel:+919450509659" aria-label="Call Risa Energy" title="Call us">📞</a>
+    <a class="floating-action floating-whatsapp" id="floatingWhatsappButton" href="https://wa.me/919450509659" target="_blank" rel="noopener noreferrer" aria-label="Chat with Risa Energy on WhatsApp" title="WhatsApp us">💬</a>
   </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="data/data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/emi-calculator.js"></script>
 </body>
 </html>
